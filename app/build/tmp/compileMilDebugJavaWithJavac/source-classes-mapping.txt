@@ -10,7 +10,6 @@ com/atakmap/android/plugintemplate/plugin/SnmpMenager.java
  com.atakmap.android.plugintemplate.plugin.SnmpMenager
 com/atakmap/android/plugintemplate/PluginTemplateDropDownReceiver.java
  com.atakmap.android.plugintemplate.PluginTemplateDropDownReceiver
- com.atakmap.android.plugintemplate.PluginTemplateDropDownReceiver$1
 com/atakmap/android/plugintemplate/plugin/PluginTemplateTool.java
  com.atakmap.android.plugintemplate.plugin.PluginTemplateTool
 com/atakmap/android/plugintemplate/plugin/RadiostationFragment.java

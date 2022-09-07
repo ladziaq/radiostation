@@ -1,4 +1,6 @@
 package com.atakmap.android.plugintemplate.plugin;
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 
 import java.io.IOException;
@@ -24,38 +26,34 @@ import org.snmp4j.smi.UdpAddress;
 import org.snmp4j.smi.VariableBinding;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
 
-public class SnmpMenager{
+public class SnmpMenager extends AsyncTask<UdpAddress,Void,String>{
 
+    @Override
+    protected String doInBackground(UdpAddress... string) {
 
-    public static CommunityTarget createDefault(String ip, String community) {
-        Address address = GenericAddress.parse("udp" + ":" + ip
+        Address address = GenericAddress.parse("udp" + ":" + string[0]
                 + "/" + "161");
 
         CommunityTarget target = new CommunityTarget();
-        target.setCommunity(new OctetString(community));
+        target.setCommunity(new OctetString("public"));
         target.setAddress(address);
         target.setVersion(SnmpConstants.version2c);
         target.setTimeout(1000);
         target.setRetries(3);
-        return target;
-    }
 
-    public  static  String snmpGet(String ip, String community, String oid) {
-
-        CommunityTarget target = createDefault(ip, community);
         Snmp snmp = null;
         String textOfResponse = "";
+
+
         try {
 
             PDU pdu = new PDU();
 
-            pdu.add(new VariableBinding(new OID(oid)));
+            pdu.add(new VariableBinding(new OID("1.3.6.1.4.1.4045.61005681.20.1.0")));
 
             DefaultUdpTransportMapping transport = new DefaultUdpTransportMapping();
 
             snmp = new Snmp(transport);
-
-
 
             snmp.listen();
 
@@ -66,7 +64,7 @@ public class SnmpMenager{
 
 
             if (response == null) {
-                textOfResponse = response.getErrorStatusText();
+                textOfResponse = "empty response";
             } else {
 
                 for (int i = 0; i < response.size(); i++) {
@@ -77,7 +75,7 @@ public class SnmpMenager{
             }
         } catch (Exception e) {
             e.printStackTrace();
-           textOfResponse = "no connection";
+            textOfResponse = "no connection";
         } finally {
             if (snmp != null) {
                 try {
@@ -90,4 +88,9 @@ public class SnmpMenager{
         }
         return textOfResponse;
     }
+    protected void onPostExecute(String info) {
+        new Intent().putExtra("info",info);
+    }
+
+
 }

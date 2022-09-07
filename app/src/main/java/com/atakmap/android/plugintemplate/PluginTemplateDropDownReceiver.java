@@ -4,6 +4,7 @@ package com.atakmap.android.plugintemplate;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
@@ -27,8 +28,20 @@ import com.atakmap.coremap.cot.event.CotPoint;
 import com.atakmap.coremap.log.Log;
 import com.atakmap.coremap.maps.time.CoordinatedTime;
 
+import org.snmp4j.CommunityTarget;
+import org.snmp4j.PDU;
+import org.snmp4j.Snmp;
+import org.snmp4j.event.ResponseEvent;
 import org.snmp4j.mp.SnmpConstants;
+import org.snmp4j.smi.Address;
+import org.snmp4j.smi.GenericAddress;
+import org.snmp4j.smi.OID;
+import org.snmp4j.smi.OctetString;
+import org.snmp4j.smi.UdpAddress;
+import org.snmp4j.smi.VariableBinding;
+import org.snmp4j.transport.DefaultUdpTransportMapping;
 
+import java.io.IOException;
 import java.sql.Time;
 
 public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
@@ -50,8 +63,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private final EditText longitudeEditText;
     private static int markerCounter = 0;
     private  String uid;
-
-
+    String textOfResponse = "nie zmieniono";
 
 
 
@@ -87,8 +99,6 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         // Remember to use the PluginLayoutInflator if you are actually inflating a custom view
         // In this case, using it is not necessary - but I am putting it here to remind
         // developers to look at this Inflator
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
 
         myFragmentView = PluginLayoutInflater.inflate(pluginContext, R.layout.radiostation_layout, null);
 
@@ -112,10 +122,9 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
         /**************************** SNMP GET *****************************/
 
-
-        String data = SnmpMenager.snmpGet("192.168.103.1","public","1.3.6.1.4.1.4045.61005681.20.1.0");
-
-
+        UdpAddress udpAddress = new UdpAddress("192.168.102.1");
+         //new SnmpMenager().execute(udpAddress);
+         //textOfResponse = new Intent().getStringExtra("info");
 
 
         /**************************** PRZYCISKI *****************************/
@@ -135,8 +144,8 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
         radioLocationButton.setOnClickListener(view -> {
 
-           radioLontextView.setText(data);
-           radioLattextView.setText(data);
+          radioLontextView.setText(textOfResponse);
+          radioLattextView.setText(textOfResponse);
         });
 
 
