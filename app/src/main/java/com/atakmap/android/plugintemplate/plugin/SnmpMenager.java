@@ -1,4 +1,6 @@
 package com.atakmap.android.plugintemplate.plugin;
+import android.os.AsyncTask;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.List;
@@ -22,7 +24,7 @@ import org.snmp4j.smi.UdpAddress;
 import org.snmp4j.smi.VariableBinding;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
 
-public class SnmpMenager {
+public class SnmpMenager{
 
 
     public static CommunityTarget createDefault(String ip, String community) {
@@ -38,7 +40,7 @@ public class SnmpMenager {
         return target;
     }
 
-    public static String snmpGet(String ip, String community, String oid) {
+    public  static  String snmpGet(String ip, String community, String oid) {
 
         CommunityTarget target = createDefault(ip, community);
         Snmp snmp = null;
@@ -51,7 +53,7 @@ public class SnmpMenager {
 
             DefaultUdpTransportMapping transport = new DefaultUdpTransportMapping();
 
-            snmp = new Snmp(transport); // tu sie zatrzymuje // snmp = new Snmp(transport);
+            snmp = new Snmp(transport);
 
 
 

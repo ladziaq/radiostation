@@ -4,6 +4,7 @@ package com.atakmap.android.plugintemplate;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -86,6 +87,8 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         // Remember to use the PluginLayoutInflator if you are actually inflating a custom view
         // In this case, using it is not necessary - but I am putting it here to remind
         // developers to look at this Inflator
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         myFragmentView = PluginLayoutInflater.inflate(pluginContext, R.layout.radiostation_layout, null);
 
@@ -107,6 +110,14 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         longAndLat = latitude.toString() + ' ' + longitude.toString();
         textView.setText(longAndLat);
 
+        /**************************** SNMP GET *****************************/
+
+
+        String data = SnmpMenager.snmpGet("192.168.103.1","public","1.3.6.1.4.1.4045.61005681.20.1.0");
+
+
+
+
         /**************************** PRZYCISKI *****************************/
         markButton.setOnClickListener(view -> {
             CotEvent cotEvent = createPoint();
@@ -123,9 +134,9 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         });
 
         radioLocationButton.setOnClickListener(view -> {
-            String data = SnmpMenager.snmpGet("192.168.103.1","public","1.3.6.1.4.1.4045.61005681.20.1.0");
-            radioLontextView.setText(data);
-            radioLattextView.setText(data);
+
+           radioLontextView.setText(data);
+           radioLattextView.setText(data);
         });
 
 
