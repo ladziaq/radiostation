@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\build\\intermediates\\res\\merged\\mil\\debug\\drawable_ic_launcher.png.flat",
+        "source": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\src\\main\\res\\drawable\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\build\\intermediates\\res\\merged\\mil\\debug\\drawable_new_dark_button_bg.xml.flat",
+        "source": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\src\\main\\res\\drawable\\new_dark_button_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\build\\intermediates\\res\\merged\\mil\\debug\\drawable_new_dark_button_disabled.xml.flat",
+        "source": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\src\\main\\res\\drawable\\new_dark_button_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\build\\intermediates\\res\\merged\\mil\\debug\\layout_main_layout.xml.flat",
+        "source": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\src\\main\\res\\layout\\main_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\build\\intermediates\\res\\merged\\mil\\debug\\drawable_btn_gray.xml.flat",
+        "source": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\src\\main\\res\\drawable\\btn_gray.xml"
+    },
+    {
+        "merged": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\build\\intermediates\\res\\merged\\mil\\debug\\drawable_new_dark_button_selected.xml.flat",
+        "source": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\src\\main\\res\\drawable\\new_dark_button_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\build\\intermediates\\res\\merged\\mil\\debug\\layout_radiostation_layout.xml.flat",
+        "source": "C:\\Users\\praktyki\\Desktop\\atakSDK\\atak-civ\\plugin-examples\\plugintemplate\\app\\src\\main\\res\\layout\\radiostation_layout.xml"
+    }
+]

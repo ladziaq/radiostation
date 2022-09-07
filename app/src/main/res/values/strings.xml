@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Radiostation</string>
+    <!-- description -->
+    <string name="app_desc">Plugin to connect with radiostation</string>
+
+    <string name="radiostation">Radiostation</string>
+    <string name="send_location">Send location</string>
+    <string name="actual_location">Actual localization</string>
+    <string name="mark_button_text">Add point</string>
+    <string name="new_mark_button_text">Add new point</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="long_lat">long and lat</string>lat_lon
+    <string name="lat">Latitude</string>
+    <string name="lon">Longitude</string>radio_location
+    <string name="radio_location">Localization of radiostation</string>
+</resources>
