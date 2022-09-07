@@ -31,12 +31,14 @@ id longLatTextView
 id longitude_editText
 id markButton
 id newMarkButton
+id radioStationButton
 id sendLocationButton
 layout main_layout
 layout radiostation_layout
 string actual_location
 string app_desc
 string app_name
+string get_location_button_text
 string hello_blank_fragment
 string lat
 string lon

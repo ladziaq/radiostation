@@ -41,6 +41,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private final View myFragmentView;
     private final Button markButton;
     private final Button newMarkButton;
+    private final Button radioLocationButton;
     private final TextView textView;
     private final TextView radioLattextView;
     private final TextView radioLontextView;
@@ -91,6 +92,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         textView = myFragmentView.findViewById(R.id.longLatTextView);
         markButton = myFragmentView.findViewById(R.id.markButton);
         newMarkButton = myFragmentView.findViewById(R.id.newMarkButton);
+        radioLocationButton = myFragmentView.findViewById(R.id.radioStationButton);
 
         latitudeEditText = myFragmentView.findViewById(R.id.latitude_editText);
         longitudeEditText = myFragmentView.findViewById(R.id.longitude_editText);
@@ -120,11 +122,14 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             CotMapComponent.getInternalDispatcher().dispatch(cotEvent);
         });
 
-        /**************************** SNMP CONNECTION *****************************/
-
+        radioLocationButton.setOnClickListener(view -> {
             String data = SnmpMenager.snmpGet("192.168.103.1","public","1.3.6.1.4.1.4045.61005681.20.1.0");
             radioLontextView.setText(data);
             radioLattextView.setText(data);
+        });
+
+
+
 
 
     }

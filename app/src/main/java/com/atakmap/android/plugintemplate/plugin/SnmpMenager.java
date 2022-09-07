@@ -50,7 +50,7 @@ public class SnmpMenager {
             pdu.add(new VariableBinding(new OID(oid)));
 
             DefaultUdpTransportMapping transport = new DefaultUdpTransportMapping();
-            textOfResponse = "udalo sie utworzyc";
+
             snmp = new Snmp(transport); // tu sie zatrzymuje // snmp = new Snmp(transport);
 
 
@@ -64,8 +64,7 @@ public class SnmpMenager {
 
 
             if (response == null) {
-
-                textOfResponse = "Response is empty";
+                textOfResponse = response.getErrorStatusText();
             } else {
 
                 for (int i = 0; i < response.size(); i++) {

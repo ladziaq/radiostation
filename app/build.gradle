@@ -112,7 +112,7 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdk 28
     buildToolsVersion "30.0.2"
 
     dexOptions {
