@@ -51,7 +51,7 @@ public class SnmpMenager {
 
             DefaultUdpTransportMapping transport = new DefaultUdpTransportMapping();
             textOfResponse = "udalo sie utworzyc";
-            snmp = new Snmp(); // tu sie zatrzymuje // snmp = new Snmp(transport);
+            snmp = new Snmp(transport); // tu sie zatrzymuje // snmp = new Snmp(transport);
 
 
 

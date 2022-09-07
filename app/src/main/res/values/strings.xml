@@ -14,5 +14,6 @@
     <string name="long_lat">long and lat</string>lat_lon
     <string name="lat">Latitude</string>
     <string name="lon">Longitude</string>radio_location
-    <string name="radio_location">Localization of radiostation</string>
+    <string name="radio_location">Localization of radiostation</string>get_location_button_text
+    <string name="get_location_button_text">Get location</string>
 </resources>

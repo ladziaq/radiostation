@@ -10,8 +10,8 @@
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 1,
-      "versionName": "4.5.1 () - [4.5.1]",
+      "versionCode": 1662532906,
+      "versionName": "4.5.1 (bc45f33b) - [4.5.1]",
       "outputFile": "AndroidManifest.xml"
     }
   ]
