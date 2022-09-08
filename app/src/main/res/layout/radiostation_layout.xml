@@ -26,7 +26,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="54dp"
         android:layout_marginEnd="263dp"
-        android:text="@string/actual_location" />
+        android:text="@string/actual_location"
+        android:textColor="#00BCD4" />
 
     <TextView
         android:id="@+id/longLatTextView"
@@ -38,7 +39,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="184dp"
-        android:text="@string/long_lat" />
+        android:text="@string/long_lat"
+        android:textColor="#00BCD4" />
 
     <TextView
         android:layout_width="109dp"
@@ -50,7 +52,8 @@
         android:layout_marginTop="110dp"
         android:layout_marginEnd="263dp"
         android:text="@string/insert_point"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        />
 
 
 

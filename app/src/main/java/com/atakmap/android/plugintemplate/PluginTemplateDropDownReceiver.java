@@ -144,8 +144,8 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
         radioLocationButton.setOnClickListener(view -> {
 
-          radioLontextView.setText(textOfResponse);
-          radioLattextView.setText(textOfResponse);
+         // radioLontextView.setText(textOfResponse);
+         // radioLattextView.setText(textOfResponse);
         });
 
 
