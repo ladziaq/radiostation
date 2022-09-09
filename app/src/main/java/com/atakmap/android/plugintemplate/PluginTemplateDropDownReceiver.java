@@ -80,7 +80,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         cotEvent.setTime(time);
         cotEvent.setStart(time);
         cotEvent.setHow("h-e");
-        cotEvent.setType("a-e-G-U-C-I"); //a-n-G-U-C-I
+        cotEvent.setType("a-f-G-U-C-I");
         cotEvent.setStale(time.addMinutes(10));
         cotEvent.setPoint(cotPoint);
 
@@ -232,10 +232,24 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                 radioLattextView.setText("wait");
                 radioLontextView.setText("wait");
             }else {
-                String lat = info.substring(16, 27);
-                String lon = info.substring(28, 40);
+                String lat = info.substring(16, 18) + "." + info.substring(18, 20) + info.charAt(26);
+                String lon = info.substring(28, 31) + "." +info.substring(31,33)+ info.charAt(39);
                 radioLattextView.setText(lat);
                 radioLontextView.setText(lon);
+
+                lat = lat.substring(0,4);
+                lon = lon.substring(0,5);
+                CotPoint cotPoint = new CotPoint(Double.parseDouble(lat),Double.parseDouble(lon),0.0,2.0,2.0);
+                CoordinatedTime time = new CoordinatedTime();
+                CotEvent cotEvent = new CotEvent();
+                cotEvent.setTime(time);
+                cotEvent.setStart(time);
+                cotEvent.setHow("h-e");
+                cotEvent.setType("a-f-G-U-C-I");
+                cotEvent.setStale(time.addMinutes(10));
+                cotEvent.setPoint(cotPoint);
+                cotEvent.setUID("radiostation");
+                CotMapComponent.getInternalDispatcher().dispatch(cotEvent);
                 Log.d("myTag", info);
             }
         }
