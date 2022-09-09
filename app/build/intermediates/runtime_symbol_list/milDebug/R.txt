@@ -33,10 +33,11 @@ int id newMarkButton 0x7f050007
 int id radioStationButton 0x7f050008
 int layout main_layout 0x7f060000
 int layout radiostation_layout 0x7f060001
+int string _0 0x7f07000f
 int string actual_location 0x7f070000
 int string app_desc 0x7f070001
 int string app_name 0x7f070002
-int string get_location_button_text 0x7f070003
+int string get_coordinates_button_text 0x7f070011
 int string hello_blank_fragment 0x7f070004
 int string insert_point 0x7f070005
 int string lat 0x7f070006
@@ -44,6 +45,7 @@ int string lon 0x7f070007
 int string long_lat 0x7f070008
 int string mark_button_text 0x7f070009
 int string new_mark_button_text 0x7f07000a
+int string no_connection 0x7f070010
 int string radio_location 0x7f07000b
 int string radiostation 0x7f07000c
 int string send_location 0x7f07000d

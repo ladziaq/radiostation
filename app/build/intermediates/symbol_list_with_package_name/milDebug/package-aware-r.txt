@@ -34,10 +34,11 @@ id newMarkButton
 id radioStationButton
 layout main_layout
 layout radiostation_layout
+string _0
 string actual_location
 string app_desc
 string app_name
-string get_location_button_text
+string get_coordinates_button_text
 string hello_blank_fragment
 string insert_point
 string lat
@@ -45,6 +46,7 @@ string lon
 string long_lat
 string mark_button_text
 string new_mark_button_text
+string no_connection
 string radio_location
 string radiostation
 string send_location

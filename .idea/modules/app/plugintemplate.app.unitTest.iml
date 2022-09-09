@@ -32,8 +32,9 @@
     <orderEntry type="module" module-name="plugintemplate.app.main" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Gradle: C./Users/praktyki/Desktop/atakSDK/atak-civ/main.jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-crashlytics-buildtools:2.7.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: org.snmp4j:snmp4j:3.7.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.snmp4j:snmp4j:2.5.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.annotation:annotation:1.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: log4j:log4j:1.2.14" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.recyclerview:recyclerview:1.1.0@aar" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="plugintemplate.app.main" />

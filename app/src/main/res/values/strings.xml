@@ -3,7 +3,7 @@
     <!-- App -->
     <string name="app_name">Radiostation</string>
     <!-- description -->
-    <string name="app_desc">Plugin to connect with radiostation</string>
+    <string name="app_desc">PLUGIN TO CONNECT WITH RADIOSTATION</string>
 
     <string name="radiostation">Radiostation</string>
     <string name="send_location">Send location</string>
@@ -14,7 +14,9 @@
     <string name="long_lat">long and lat</string>lat_lon
     <string name="lat">Latitude</string>
     <string name="lon">Longitude</string>radio_location
-    <string name="radio_location">Localization of radiostation</string>
-    <string name="get_location_button_text">Get location</string>
-    <string name="insert_point">Insert point coordinates</string>
+    <string name="radio_location">RADIOSTATION COORDINATES</string>
+    <string name="get_coordinates_button_text">Get coordinates</string>
+    <string name="insert_point">INSERT POINT COORDINATES</string>
+    <string name="_0">0</string>
+    <string name="no_connection">No connection</string>
 </resources>
