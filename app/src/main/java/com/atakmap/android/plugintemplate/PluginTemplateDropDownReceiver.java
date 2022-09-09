@@ -80,7 +80,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         cotEvent.setTime(time);
         cotEvent.setStart(time);
         cotEvent.setHow("h-e");
-        cotEvent.setType("a-n-G-U-C-I"); //a-n-G-U-C-I
+        cotEvent.setType("a-e-G-U-C-I"); //a-n-G-U-C-I
         cotEvent.setStale(time.addMinutes(10));
         cotEvent.setPoint(cotPoint);
 
@@ -182,7 +182,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             target.setRetries(3);
 
             Snmp snmp = null;
-            String textOfResponse = "1";
+            String textOfResponse = "0";
 
 
             try {
@@ -203,7 +203,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
 
                 if (response == null) {
-                    textOfResponse = "1";
+                    textOfResponse = "0";
                 } else {
 
                     for (int i = 0; i < response.size(); i++) {
@@ -214,7 +214,6 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                textOfResponse = "1";
             } finally {
                 if (snmp != null) {
                     try {
@@ -229,7 +228,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         }
         @SuppressLint("SetTextI18n")
         protected void onPostExecute(String info) {
-            if(info.equals("1")){
+            if(info.equals("0")){
                 radioLattextView.setText("wait");
                 radioLontextView.setText("wait");
             }else {
