@@ -51,6 +51,7 @@ string radio_location
 string radiostation
 string send_location
 string versionName
+string wait
 style ATAKEditText
 style ATAKPluginTheme
 style ATAKSpinner

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.atak.plugins.impl.PluginLayoutInflater;
 import com.atakmap.android.cot.CotMapComponent;
@@ -61,6 +62,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private static int markerCounter = 0;
     private  String uid;
 
+
     public CotEvent createPoint(){
 
         String lat = latitudeEditText.getText().toString();
@@ -105,43 +107,63 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         radioLattextView = myFragmentView.findViewById(R.id.lat_textView);
         radioLontextView = myFragmentView.findViewById(R.id.lon_textView);
 
-
         /**************************** USTALANIE POŁOŻENIA *****************************/
 
-        Double latitude = mapView.getSelfMarker().getPoint().getLatitude();
-        Double longitude = mapView.getSelfMarker().getPoint().getLongitude();
+        double latitude = mapView.getSelfMarker().getPoint().getLatitude();
+        double longitude = mapView.getSelfMarker().getPoint().getLongitude();
 
         String longAndLat;
 
-        longAndLat = latitude.toString().substring(0,6) + ' ' + longitude.toString().substring(0,7);
+        longAndLat = Double.toString(latitude).substring(0,6) + ' ' + Double.toString(longitude).substring(0,7);
         textView.setText(longAndLat);
 
 
         /**************************** PRZYCISKI *****************************/
+
+
         markButton.setOnClickListener(view -> {
-            CotEvent cotEvent = createPoint();
-            cotEvent.setUID("default");
-            CotMapComponent.getInternalDispatcher().dispatch(cotEvent);
+            double lat = Double.parseDouble(latitudeEditText.getText().toString());
+            double lon = Double.parseDouble(longitudeEditText.getText().toString());
+            if((lat > 90 || lat < -90) || (lon > 180 || lon < -180)){
+                Toast toast = Toast.makeText(context, "INPUT LATIDUE BETWEEN -90 TO 90 AND LONGITUDE BETWEEN -180 AND 180", Toast.LENGTH_SHORT);
+                toast.show();
+            }else {
+                CotEvent cotEvent = createPoint();
+                cotEvent.setUID("default");
+
+                CotMapComponent.getInternalDispatcher().dispatch(cotEvent);
+            }
         });
 
         newMarkButton.setOnClickListener(view -> {
-            CotEvent cotEvent = createPoint();
-            markerCounter++;
-            uid = "UID " + markerCounter;
-            cotEvent.setUID(uid);
-            CotMapComponent.getInternalDispatcher().dispatch(cotEvent);
+            double lat = Double.parseDouble(latitudeEditText.getText().toString());
+            double lon = Double.parseDouble(longitudeEditText.getText().toString());
+            if((lat > 90 || lat < -90) || (lon > 180 || lon < -180)){
+                Toast toast = Toast.makeText(context, "INPUT LATIDUE BETWEEN -90 TO 90 AND LONGITUDE BETWEEN -180 AND 180", Toast.LENGTH_LONG);
+                toast.show();
+            }else {
+                CotEvent cotEvent = createPoint();
+                markerCounter++;
+                uid = "UID " + markerCounter;
+                cotEvent.setUID(uid);
+                CotMapComponent.getInternalDispatcher().dispatch(cotEvent);
+            }
+
         });
 
-        radioLocationButton.setOnClickListener(view -> {
-
+        radioLocationButton.setOnClickListener(v -> {
             try {
                 new LongRunningTask().execute();
             }catch (Exception e){
                 e.printStackTrace();
             }
-
         });
 
+        try {
+            new LongRunningTask().execute();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
@@ -160,7 +182,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             target.setRetries(3);
 
             Snmp snmp = null;
-            String textOfResponse = "";
+            String textOfResponse = "1";
 
 
             try {
@@ -181,7 +203,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
 
                 if (response == null) {
-                    textOfResponse = "empty response";
+                    textOfResponse = "1";
                 } else {
 
                     for (int i = 0; i < response.size(); i++) {
@@ -192,7 +214,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                textOfResponse = "no connection";
+                textOfResponse = "1";
             } finally {
                 if (snmp != null) {
                     try {
@@ -205,12 +227,18 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             }
             return textOfResponse;
         }
+        @SuppressLint("SetTextI18n")
         protected void onPostExecute(String info) {
-            String lat = info.substring(16,27);
-            String lon = info.substring(28,40);
-            radioLattextView.setText(lat);
-            radioLontextView.setText(lon);
-            Log.d("myTag", info);
+            if(info.equals("1")){
+                radioLattextView.setText("wait");
+                radioLontextView.setText("wait");
+            }else {
+                String lat = info.substring(16, 27);
+                String lon = info.substring(28, 40);
+                radioLattextView.setText(lat);
+                radioLontextView.setText(lon);
+                Log.d("myTag", info);
+            }
         }
 
     }

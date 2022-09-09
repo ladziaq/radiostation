@@ -94,7 +94,7 @@
 
     <EditText
         android:id="@+id/latitude_editText"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:layout_width="70dp"
         android:text="@string/_0"
         android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
 
     <EditText
         android:id="@+id/longitude_editText"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned|numberDecimal"
         android:layout_width="70dp"
         android:text="@string/_0"
         android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
         android:layout_marginStart="220dp"
         android:layout_marginTop="190dp"
         android:layout_marginEnd="263dp"
-        android:text="@string/_0"
+        android:text="@string/wait"
         android:textSize="14sp" />
 
     <TextView
@@ -130,7 +130,7 @@
         android:layout_marginStart="310dp"
         android:layout_marginTop="190dp"
         android:layout_marginEnd="263dp"
-        android:text="@string/_0"
+        android:text="@string/wait"
         android:textSize="14sp" />
 
     <Button
