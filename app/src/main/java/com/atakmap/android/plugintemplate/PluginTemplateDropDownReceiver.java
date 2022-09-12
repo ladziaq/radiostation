@@ -150,28 +150,29 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             }
 
         });
-
+        String text = "192.168.102.1";
         radioLocationButton.setOnClickListener(v -> {
             try {
-                new LongRunningTask().execute();
+                new LongRunningTask().execute(text);
             }catch (Exception e){
                 e.printStackTrace();
             }
         });
 
+
         try {
-            new LongRunningTask().execute();
+            new LongRunningTask().execute(text);
         }catch (Exception e){
             e.printStackTrace();
         }
 
     }
 
-    private static class LongRunningTask extends AsyncTask<Void,Void,String>{
+    private static class LongRunningTask extends AsyncTask<String,Void,String>{
 
         @Override
-        protected String doInBackground(Void... string) {
-            Address address = GenericAddress.parse("udp" + ":" + "192.168.102.1"
+        protected String doInBackground(String... string) {
+            Address address = GenericAddress.parse("udp" + ":" + string[0]
                     + "/" + "161");
 
             CommunityTarget target = new CommunityTarget();
