@@ -1,5 +1,5 @@
 
-package com.atakmap.android.plugintemplate;
+package com.atakmap.android.radiostation;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.atak.plugins.impl.PluginLayoutInflater;
 import com.atakmap.android.cot.CotMapComponent;
 import com.atakmap.android.maps.MapView;
-import com.atakmap.android.plugintemplate.plugin.R;
+import com.atakmap.android.radiostation.plugin.R;
 import com.atakmap.android.dropdown.DropDown.OnStateListener;
 import com.atakmap.android.dropdown.DropDownReceiver;
 

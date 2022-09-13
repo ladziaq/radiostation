@@ -1,8 +1,8 @@
 
-package com.atakmap.android.plugintemplate.plugin;
+package com.atakmap.android.radiostation.plugin;
 
 import com.atakmap.android.ipc.AtakBroadcast;
-import com.atakmap.android.plugintemplate.PluginTemplateDropDownReceiver;
+import com.atakmap.android.radiostation.PluginTemplateDropDownReceiver;
 
 import android.app.Activity;
 import android.content.Context;

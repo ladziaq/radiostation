@@ -1,4 +1,4 @@
-com.atakmap.android.plugintemplate.plugin
+com.atakmap.android.radiostation.plugin
 attr fastScrollEnabled
 attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
@@ -41,6 +41,7 @@ string app_name
 string get_coordinates_button_text
 string hello_blank_fragment
 string insert_point
+string ip_addr
 string lat
 string lon
 string long_lat

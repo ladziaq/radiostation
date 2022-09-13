@@ -1,4 +1,4 @@
-package com.atakmap.android.plugintemplate.plugin;
+package com.atakmap.android.radiostation.plugin;
 
 import android.content.Context;
 import android.os.Bundle;

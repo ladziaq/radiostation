@@ -4,14 +4,14 @@
     "type": "MERGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.atakmap.android.plugintemplate.plugin",
+  "applicationId": "com.atakmap.android.radiostation.plugin",
   "variantName": "milDebug",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 1662720676,
-      "versionName": "4.5.1 (a3f20364) - [4.5.1]",
+      "versionCode": 1662969094,
+      "versionName": "4.5.1 (971b0a5f) - [4.5.1]",
       "outputFile": "AndroidManifest.xml"
     }
   ]
