@@ -1,4 +1,5 @@
 com.atakmap.android.radiostation.plugin
+array ip_addr_array
 attr fastScrollEnabled
 attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
@@ -23,6 +24,7 @@ drawable ic_launcher
 drawable new_dark_button_bg
 drawable new_dark_button_disabled
 drawable new_dark_button_selected
+id addRadiostationButton
 id divider
 id ipAddr1
 id ipAddr2
@@ -37,10 +39,12 @@ id longitude_editText
 id markButton
 id newMarkButton
 id radioStationButton
+id spinner
 layout main_layout
 layout radiostation_layout
 string _0
 string actual_location
+string add_radiostation
 string app_desc
 string app_name
 string get_coordinates_button_text

@@ -9,6 +9,10 @@
         <item name="android:spinnerItemStyle">@style/ATAKSpinnerItem</item>
         <item name="android:editTextStyle">@style/ATAKEditText</item>
     </style>
+    <string-array name="ip_addr_array">
+        <item>127.0.0.1</item>
+
+    </string-array>
 
 
     <style name="ATAKTheme" parent="@android:style/Theme.Holo">

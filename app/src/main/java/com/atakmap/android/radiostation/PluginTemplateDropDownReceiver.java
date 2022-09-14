@@ -4,17 +4,15 @@ package com.atakmap.android.radiostation;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.inputmethodservice.Keyboard;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +41,6 @@ import org.snmp4j.smi.VariableBinding;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         OnStateListener {
@@ -70,6 +67,8 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private final EditText ipaddr4;
     private static int markerCounter = 0;
     private  String uid;
+    String[] adreses = { "127.0.0.1"};
+
 
 
     public CotEvent createPoint(){
@@ -121,7 +120,23 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         ipaddr2 = myFragmentView.findViewById(R.id.ipAddr2);
         ipaddr3 = myFragmentView.findViewById(R.id.ipAddr3);
         ipaddr4 = myFragmentView.findViewById(R.id.ipAddr4);
+        Spinner spinner = myFragmentView.findViewById(R.id.spinner);
 
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this.pluginContext, android.R.layout.simple_spinner_item, adreses);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         ipaddr1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -273,6 +288,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         });
 
     }
+
 
     private static class LongRunningTask extends AsyncTask<String,Void,String>{
 

@@ -21,5 +21,6 @@
     <string name="wait">WAIT</string>
     <string name="no_connection">no connection</string>
     <string name="ip_addr">IP address</string>
-    <string name="insert_ip_addr">INSERT IP ADDRESS</string>
+    <string name="insert_ip_addr">SELECT OR INSERT IP ADDRESS</string>
+    <string name="add_radiostation">Add radiostation</string>
 </resources>
