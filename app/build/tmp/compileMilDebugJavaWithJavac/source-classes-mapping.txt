@@ -1,17 +1,17 @@
-com/atakmap/android/radiostation/plugin/BuildConfig.java
- com.atakmap.android.radiostation.plugin.BuildConfig
-com/atakmap/android/radiostation/plugin/PluginTemplateLifecycle.java
- com.atakmap.android.radiostation.plugin.PluginTemplateLifecycle
-com/atakmap/android/radiostation/plugin/PluginNativeLoader.java
- com.atakmap.android.radiostation.plugin.PluginNativeLoader
 com/atakmap/android/radiostation/plugin/RadiostationFragment.java
  com.atakmap.android.radiostation.plugin.RadiostationFragment
+com/atakmap/android/radiostation/plugin/PluginTemplateLifecycle.java
+ com.atakmap.android.radiostation.plugin.PluginTemplateLifecycle
 com/atakmap/android/radiostation/PluginTemplateDropDownReceiver.java
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$1
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$2
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$3
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$LongRunningTask
+com/atakmap/android/radiostation/plugin/BuildConfig.java
+ com.atakmap.android.radiostation.plugin.BuildConfig
+com/atakmap/android/radiostation/plugin/PluginNativeLoader.java
+ com.atakmap.android.radiostation.plugin.PluginNativeLoader
 com/atakmap/android/radiostation/PluginTemplateMapComponent.java
  com.atakmap.android.radiostation.PluginTemplateMapComponent
 com/atakmap/android/radiostation/plugin/PluginTemplateTool.java
