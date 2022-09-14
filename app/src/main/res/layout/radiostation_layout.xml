@@ -1,168 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RadiostationFragment">
 
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="390dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="184dp"
-        android:text="@string/app_desc"
-        android:textColor="#F40A0A"
-        android:textSize="24sp" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="390dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/app_desc"
+                android:textColor="#F40A0A"
+                android:textSize="24sp" />
 
-    <TextView
-        android:layout_width="129dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="260dp"
-        android:text="@string/actual_location"
-        android:textColor="#00BCD4" />
+            <TextView
+                android:layout_width="129dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginTop="360dp"
+                android:layout_marginEnd="260dp"
+                android:text="@string/actual_location"
+                android:textColor="#00BCD4" />
 
-    <TextView
-        android:id="@+id/longLatTextView"
-        android:layout_width="170dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="390dp"
-        android:layout_marginEnd="184dp"
-        android:text="@string/long_lat"
-        android:textColor="#00BCD4" />
+            <TextView
+                android:id="@+id/longLatTextView"
+                android:layout_width="170dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginTop="390dp"
+                android:layout_marginEnd="184dp"
+                android:text="@string/long_lat"
+                android:textColor="#00BCD4" />
 
-    <TextView
-        android:layout_width="109dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="263dp"
-        android:text="@string/insert_point"
-        android:textSize="14sp"
-        />
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="263dp"
+                android:text="@string/no_connection"
+                android:textSize="14sp" />
 
-
-
-    <TextView
-        android:layout_width="109dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="263dp"
-        android:text="@string/radio_location"
-        android:textSize="14sp" />
+            <TextView
+                android:layout_width="133dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="263dp"
+                android:text="@string/insert_point"
+                android:textSize="14sp" />
 
 
+            <EditText
+                android:id="@+id/ipAddr1"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="130dp"
+                android:layout_marginEnd="184dp"
+                android:inputType="number"
+                android:maxLength="3"/>
 
-    <TextView
-        android:layout_width="70dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="263dp"
-        android:text="@string/lat"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/ipAddr2"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="130dp"
+                android:maxLength="3"
+                android:layout_marginEnd="184dp"
+                android:inputType="number"/>
 
-    <TextView
-        android:layout_width="70dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="263dp"
-        android:text="@string/lon"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/ipAddr3"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="130dp"
+                android:maxLength="3"
+                android:layout_marginEnd="184dp"
+                android:inputType="number" />
 
-    <TextView
-        android:layout_width="70dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="263dp"
-        android:text="@string/lat"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/ipAddr4"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="130dp"
+                android:maxLength="3"
+                android:layout_marginEnd="184dp"
+                android:inputType="number"/>
 
-    <TextView
-        android:layout_width="70dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="263dp"
-        android:text="@string/lon"
-        android:textSize="14sp" />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="140dp"
+                android:layout_marginEnd="263dp"
+                android:text="@string/lat"
+                android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/latitude_editText"
-        android:inputType="numberSigned|numberDecimal"
-        android:layout_width="70dp"
-        android:text="@string/_0"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="184dp" />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="340dp"
+                android:layout_marginTop="140dp"
+                android:layout_marginEnd="263dp"
+                android:text="@string/lon"
+                android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/longitude_editText"
-        android:inputType="numberSigned|numberDecimal"
-        android:layout_width="70dp"
-        android:text="@string/_0"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="184dp" />
+            <EditText
+                android:id="@+id/longitude_editText"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="170dp"
+                android:layout_marginEnd="184dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:text="@string/_0" />
 
-    <TextView
-        android:id="@+id/lat_textView"
-        android:layout_width="90dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="263dp"
-        android:text="@string/wait"
-        android:textSize="14sp" />
+            <EditText
+                android:id="@+id/latitude_editText"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="340dp"
+                android:layout_marginTop="170dp"
+                android:layout_marginEnd="184dp"
+                android:inputType="numberDecimal|numberSigned"
+                android:text="@string/_0" />
 
-    <TextView
-        android:id="@+id/lon_textView"
-        android:layout_width="90dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="263dp"
-        android:text="@string/wait"
-        android:textSize="14sp" />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="190dp"
+                android:layout_marginEnd="263dp"
+                android:text="@string/lat"
+                android:textSize="14sp" />
 
-    <Button
-        android:id="@+id/markButton"
-        style="@style/darkButton"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="310dp"
-        android:padding="6dp"
-        android:text="@string/mark_button_text" />
-    <Button
-        android:id="@+id/radioStationButton"
-        style="@style/darkButton"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="310dp"
-        android:padding="6dp"
-        android:text="@string/get_coordinates_button_text" />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="190dp"
+                android:layout_marginEnd="263dp"
+                android:text="@string/lon"
+                android:textSize="14sp" />
 
-    <Button
-        android:id="@+id/newMarkButton"
-        style="@style/darkButton"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="310dp"
-        android:text="@string/new_mark_button_text" />
+            <Button
+                android:id="@+id/markButton"
+                style="@style/darkButton"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginEnd="310dp"
+                android:padding="6dp"
+                android:text="@string/mark_button_text" />
 
-</FrameLayout>
+
+            <TextView
+                android:id="@+id/lat_textView"
+                android:layout_width="90dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="230dp"
+                android:layout_marginEnd="263dp"
+                android:text="@string/no_connection"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/lon_textView"
+                android:layout_width="90dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="230dp"
+                android:layout_marginEnd="263dp"
+                android:text="@string/no_connection"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/radioStationButton"
+                style="@style/darkButton"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="270dp"
+                android:layout_marginEnd="310dp"
+                android:padding="6dp"
+                android:text="@string/get_coordinates_button_text" />
+            <Button
+                android:id="@+id/newMarkButton"
+                style="@style/darkButton"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="260dp"
+                android:layout_marginTop="270dp"
+                android:layout_marginEnd="310dp"
+                android:padding="6dp"
+                android:text="@string/new_mark_button_text" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="wrap_content"
+                android:layout_height="243dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginTop="90dp"
+                android:background="?android:attr/listDivider" />
+        </FrameLayout>
+
+    </HorizontalScrollView>
+
+</ScrollView>
