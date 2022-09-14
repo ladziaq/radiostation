@@ -7,6 +7,7 @@ com/atakmap/android/radiostation/PluginTemplateDropDownReceiver.java
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$1
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$2
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$3
+ com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$4
  com.atakmap.android.radiostation.PluginTemplateDropDownReceiver$LongRunningTask
 com/atakmap/android/radiostation/plugin/BuildConfig.java
  com.atakmap.android.radiostation.plugin.BuildConfig

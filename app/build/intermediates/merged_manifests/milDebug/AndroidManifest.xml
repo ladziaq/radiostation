@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.atakmap.android.radiostation.plugin"
-    android:versionCode="1663142287"
-    android:versionName="4.5.1 (249e359d) - [4.5.1]" >
+    android:versionCode="1663143557"
+    android:versionName="4.5.1 (cf0d14dc) - [4.5.1]" >
 
     <uses-sdk
         android:minSdkVersion="21"

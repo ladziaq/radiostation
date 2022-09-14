@@ -19,7 +19,7 @@
     <string name="insert_point">INSERT POINT COORDINATES</string>
     <string name="_0">0</string>
     <string name="wait">WAIT</string>
-    <string name="no_connection">No connection</string>
+    <string name="no_connection">no connection</string>
     <string name="ip_addr">IP address</string>
     <string name="insert_ip_addr">INSERT IP ADDRESS</string>
 </resources>

@@ -6,11 +6,9 @@
                 {
                     "source": "C:\\Users\\praktyki\\Desktop\\nowe\\atak-civ\\plugin-examples\\radiostation\\app\\build\\generated\\res\\resValues\\mil\\debug\\values\\gradleResValues.xml",
                     "from": {
-                        "startLines": "6",
-                        "startColumns": "4",
-                        "startOffsets": "155",
-                        "endColumns": "87",
-                        "endOffsets": "238"
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
                     },
                     "to": {
                         "startLines": "31",
@@ -38,9 +36,11 @@
                 {
                     "source": "C:\\Users\\praktyki\\Desktop\\nowe\\atak-civ\\plugin-examples\\radiostation\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,21,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,4,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,1035,-1,-1,-1,-1",
+                        "endColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,55,-1,-1,-1,-1",
+                        "endOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,1086,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,32",

@@ -4,12 +4,14 @@ package com.atakmap.android.radiostation;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.inputmethodservice.Keyboard;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -129,11 +131,11 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
                 if(ipaddr1.getText().toString().length()==3)
                 {
                     ipaddr2.requestFocus();
                 }
+
             }
 
             @Override
@@ -153,6 +155,10 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                 if(ipaddr2.getText().toString().length()==3)
                 {
                     ipaddr3.requestFocus();
+                }
+                if(ipaddr2.getText().toString().length()==0)
+                {
+                    ipaddr1.requestFocus();
                 }
             }
 
@@ -174,12 +180,40 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                 {
                     ipaddr4.requestFocus();
                 }
+                if(ipaddr3.getText().toString().length()==0)
+                {
+                    ipaddr2.requestFocus();
+                }
             }
             @Override
             public void afterTextChanged(Editable s) {
 
             }
         });
+
+        ipaddr4.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(ipaddr4.getText().toString().length()==0)
+                {
+                    ipaddr3.requestFocus();
+                }
+
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
 
         /**************************** USTALANIE POŁOŻENIA *****************************/
 
@@ -328,6 +362,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         }
 
     }
+
 
     /**************************** PUBLIC METHODS *****************************/
 
