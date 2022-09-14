@@ -48,7 +48,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="263dp"
-                android:text="@string/no_connection"
+                android:text="@string/insert_ip_addr"
                 android:textSize="14sp" />
 
             <TextView
@@ -192,8 +192,8 @@
             <Button
                 android:id="@+id/radioStationButton"
                 style="@style/darkButton"
-                android:layout_width="120dp"
-                android:layout_height="40dp"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="270dp"
                 android:layout_marginEnd="310dp"

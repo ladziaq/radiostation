@@ -8,6 +8,8 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.StrictMode;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +41,7 @@ import org.snmp4j.smi.VariableBinding;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         OnStateListener {
@@ -49,8 +52,6 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     public static final String SHOW_PLUGIN = "com.atakmap.android.plugintemplate.SHOW_PLUGIN";
     private final Context pluginContext;
     private final View myFragmentView;
-    private final Button markButton;
-    private final Button newMarkButton;
     private final Button radioLocationButton;
     private final TextView textView;
     @SuppressLint("StaticFieldLeak")
@@ -59,6 +60,12 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private static TextView radioLontextView;
     private final EditText latitudeEditText;
     private final EditText longitudeEditText;
+    private final Button markButton;
+    private final Button newMarkButton;
+    private final EditText ipaddr1;
+    private final EditText ipaddr2;
+    private final EditText ipaddr3;
+    private final EditText ipaddr4;
     private static int markerCounter = 0;
     private  String uid;
 
@@ -80,12 +87,14 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         cotEvent.setTime(time);
         cotEvent.setStart(time);
         cotEvent.setHow("h-e");
-        cotEvent.setType("a-f-G-U-C-I");
+        cotEvent.setType("a-f-G-U-C-I"); ///////
         cotEvent.setStale(time.addMinutes(10));
         cotEvent.setPoint(cotPoint);
 
         return cotEvent;
     }
+
+
     @SuppressLint("SetTextI18n")
     public PluginTemplateDropDownReceiver(final MapView mapView,
                                           final Context context) {
@@ -98,14 +107,79 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
         myFragmentView = PluginLayoutInflater.inflate(pluginContext, R.layout.radiostation_layout, null);
         textView = myFragmentView.findViewById(R.id.longLatTextView);
-        markButton = myFragmentView.findViewById(R.id.markButton);
-        newMarkButton = myFragmentView.findViewById(R.id.newMarkButton);
         radioLocationButton = myFragmentView.findViewById(R.id.radioStationButton);
 
         latitudeEditText = myFragmentView.findViewById(R.id.latitude_editText);
         longitudeEditText = myFragmentView.findViewById(R.id.longitude_editText);
+        markButton = myFragmentView.findViewById(R.id.markButton);
+        newMarkButton = myFragmentView.findViewById(R.id.newMarkButton);
         radioLattextView = myFragmentView.findViewById(R.id.lat_textView);
         radioLontextView = myFragmentView.findViewById(R.id.lon_textView);
+        ipaddr1 = myFragmentView.findViewById(R.id.ipAddr1);
+        ipaddr2 = myFragmentView.findViewById(R.id.ipAddr2);
+        ipaddr3 = myFragmentView.findViewById(R.id.ipAddr3);
+        ipaddr4 = myFragmentView.findViewById(R.id.ipAddr4);
+
+
+        ipaddr1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                if(ipaddr1.getText().toString().length()==3)
+                {
+                    ipaddr2.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        ipaddr2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(ipaddr2.getText().toString().length()==3)
+                {
+                    ipaddr3.requestFocus();
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        ipaddr3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(ipaddr3.getText().toString().length()==3)
+                {
+                    ipaddr4.requestFocus();
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         /**************************** USTALANIE POŁOŻENIA *****************************/
 
@@ -114,7 +188,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
         String longAndLat;
 
-        longAndLat = Double.toString(latitude).substring(0,6) + ' ' + Double.toString(longitude).substring(0,7);
+        longAndLat = Double.toString(latitude).substring(0,5) + ' ' + Double.toString(longitude).substring(0,6);
         textView.setText(longAndLat);
 
 
@@ -150,21 +224,19 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             }
 
         });
-        String text = "192.168.102.1";
+
+
         radioLocationButton.setOnClickListener(v -> {
+
+            String ipAddress = ipaddr1.getText().toString() + "." + ipaddr2.getText().toString()
+                    + "." + ipaddr3.getText().toString() + "." + ipaddr4.getText().toString();
+
             try {
-                new LongRunningTask().execute(text);
+                new LongRunningTask().execute(ipAddress);
             }catch (Exception e){
                 e.printStackTrace();
             }
         });
-
-
-        try {
-            new LongRunningTask().execute(text);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
 
     }
 
@@ -230,8 +302,8 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         @SuppressLint("SetTextI18n")
         protected void onPostExecute(String info) {
             if(info.equals("0")){
-                radioLattextView.setText("wait");
-                radioLontextView.setText("wait");
+                radioLattextView.setText("no connection");
+                radioLontextView.setText("no connection");
             }else {
                 String lat = info.substring(16, 18) + "." + info.substring(18, 20) + info.charAt(26);
                 String lon = info.substring(28, 31) + "." +info.substring(31,33)+ info.charAt(39);

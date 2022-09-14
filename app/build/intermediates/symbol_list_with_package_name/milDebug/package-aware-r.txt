@@ -45,6 +45,7 @@ string app_desc
 string app_name
 string get_coordinates_button_text
 string hello_blank_fragment
+string insert_ip_addr
 string insert_point
 string ip_addr
 string lat

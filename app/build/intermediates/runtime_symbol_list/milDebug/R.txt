@@ -44,6 +44,7 @@ int string app_desc 0x7f070002
 int string app_name 0x7f070003
 int string get_coordinates_button_text 0x7f070004
 int string hello_blank_fragment 0x7f070005
+int string insert_ip_addr 0x7f070013
 int string insert_point 0x7f070006
 int string ip_addr 0x7f070007
 int string lat 0x7f070008
