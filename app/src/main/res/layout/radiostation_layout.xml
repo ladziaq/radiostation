@@ -11,15 +11,14 @@
         android:layout_height="wrap_content">
 
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="450dp">
+            android:layout_width="350dp"
+            android:layout_height="match_parent">
+
             <TextView
                 android:layout_width="390dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginEnd="184dp"
                 android:text="@string/app_desc"
                 android:textColor="#F40A0A"
                 android:textSize="24sp" />
@@ -29,7 +28,6 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="240dp"
                 android:layout_marginTop="360dp"
-                android:layout_marginEnd="260dp"
                 android:text="@string/actual_location"
                 android:textColor="#00BCD4" />
 
@@ -39,7 +37,6 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="240dp"
                 android:layout_marginTop="390dp"
-                android:layout_marginEnd="184dp"
                 android:text="@string/long_lat"
                 android:textColor="#00BCD4" />
 
@@ -48,7 +45,6 @@
                 android:layout_height="31dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="100dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/insert_ip_addr"
                 android:textSize="14sp" />
 
@@ -57,7 +53,6 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="100dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/insert_point"
                 android:textSize="14sp" />
 
@@ -68,9 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="130dp"
-                android:layout_marginEnd="184dp"
                 android:inputType="number"
-                android:maxLength="3"/>
+                android:maxLength="3" />
 
             <EditText
                 android:id="@+id/ipAddr2"
@@ -78,9 +72,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="65dp"
                 android:layout_marginTop="130dp"
-                android:maxLength="3"
-                android:layout_marginEnd="184dp"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:maxLength="3" />
 
             <EditText
                 android:id="@+id/ipAddr3"
@@ -88,9 +81,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="130dp"
-                android:maxLength="3"
-                android:layout_marginEnd="184dp"
-                android:inputType="number" />
+                android:inputType="number"
+                android:maxLength="3" />
 
             <EditText
                 android:id="@+id/ipAddr4"
@@ -98,16 +90,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="175dp"
                 android:layout_marginTop="130dp"
-                android:maxLength="3"
-                android:layout_marginEnd="184dp"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:maxLength="3" />
 
             <TextView
                 android:layout_width="70dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="140dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/lat"
                 android:textSize="14sp" />
 
@@ -116,7 +106,6 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="340dp"
                 android:layout_marginTop="140dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/lon"
                 android:textSize="14sp" />
 
@@ -126,7 +115,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="170dp"
-                android:layout_marginEnd="184dp"
                 android:inputType="numberDecimal|numberSigned"
                 android:text="@string/_0" />
 
@@ -136,7 +124,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="340dp"
                 android:layout_marginTop="170dp"
-                android:layout_marginEnd="184dp"
                 android:inputType="numberDecimal|numberSigned"
                 android:text="@string/_0" />
 
@@ -145,7 +132,6 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="190dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/lat"
                 android:textSize="14sp" />
 
@@ -154,7 +140,6 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="190dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/lon"
                 android:textSize="14sp" />
 
@@ -165,7 +150,6 @@
                 android:layout_height="40dp"
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="220dp"
-                android:layout_marginEnd="310dp"
                 android:padding="6dp"
                 android:text="@string/mark_button_text" />
 
@@ -176,7 +160,6 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="230dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/no_connection"
                 android:textSize="14sp" />
 
@@ -186,7 +169,6 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="230dp"
-                android:layout_marginEnd="263dp"
                 android:text="@string/no_connection"
                 android:textSize="14sp" />
 
@@ -197,9 +179,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="270dp"
-                android:layout_marginEnd="310dp"
                 android:padding="6dp"
                 android:text="@string/get_coordinates_button_text" />
+
             <Button
                 android:id="@+id/newMarkButton"
                 style="@style/darkButton"
@@ -207,7 +189,6 @@
                 android:layout_height="40dp"
                 android:layout_marginStart="260dp"
                 android:layout_marginTop="270dp"
-                android:layout_marginEnd="310dp"
                 android:padding="6dp"
                 android:text="@string/new_mark_button_text" />
 
