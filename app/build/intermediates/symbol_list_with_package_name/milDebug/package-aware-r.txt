@@ -34,7 +34,6 @@ id item_touch_helper_previous_elevation
 id lat_textView
 id latitude_editText
 id lon_textView
-id longLatTextView
 id longitude_editText
 id markButton
 id newMarkButton

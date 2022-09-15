@@ -33,7 +33,6 @@ int id item_touch_helper_previous_elevation 0x7f060006
 int id lat_textView 0x7f060007
 int id latitude_editText 0x7f060008
 int id lon_textView 0x7f060009
-int id longLatTextView 0x7f06000a
 int id longitude_editText 0x7f06000b
 int id markButton 0x7f06000c
 int id newMarkButton 0x7f06000d

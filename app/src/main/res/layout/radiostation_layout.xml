@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <FrameLayout
-            android:layout_width="350dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
             <TextView
@@ -100,7 +100,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/longitude_editText"
+                android:id="@+id/latitude_editText"
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="260dp"
@@ -109,7 +109,7 @@
                 android:text="@string/_0" />
 
             <EditText
-                android:id="@+id/latitude_editText"
+                android:id="@+id/longitude_editText"
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="340dp"
@@ -200,22 +200,6 @@
                 android:layout_marginTop="90dp"
                 android:background="?android:attr/listDivider" />
 
-            <TextView
-                android:layout_width="129dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="240dp"
-                android:layout_marginTop="340dp"
-                android:text="@string/actual_location"
-                android:textColor="#00BCD4" />
-
-            <TextView
-                android:id="@+id/longLatTextView"
-                android:layout_width="170dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="240dp"
-                android:layout_marginTop="360dp"
-                android:text="@string/long_lat"
-                android:textColor="#00BCD4" />
         </FrameLayout>
 
     </HorizontalScrollView>

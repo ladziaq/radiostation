@@ -52,7 +52,6 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private final Context pluginContext;
     private final View myFragmentView;
     private final Button radioLocationButton;
-    private final TextView textView;
     @SuppressLint("StaticFieldLeak")
     private static TextView radioLattextView;
     @SuppressLint("StaticFieldLeak")
@@ -68,6 +67,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private static int markerCounter = 0;
     private  String uid;
     String[] adreses = { "127.0.0.1"};
+
 
 
 
@@ -107,7 +107,6 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         // developers to look at this Inflator
 
         myFragmentView = PluginLayoutInflater.inflate(pluginContext, R.layout.radiostation_layout, null);
-        textView = myFragmentView.findViewById(R.id.longLatTextView);
         radioLocationButton = myFragmentView.findViewById(R.id.radioStationButton);
 
         latitudeEditText = myFragmentView.findViewById(R.id.latitude_editText);
@@ -228,19 +227,6 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         });
 
 
-
-
-        /**************************** USTALANIE POŁOŻENIA *****************************/
-
-        double latitude = mapView.getSelfMarker().getPoint().getLatitude();
-        double longitude = mapView.getSelfMarker().getPoint().getLongitude();
-
-        String longAndLat;
-
-        longAndLat = Double.toString(latitude).substring(0,5) + ' ' + Double.toString(longitude).substring(0,6);
-        textView.setText(longAndLat);
-
-
         /**************************** PRZYCISKI *****************************/
 
 
@@ -280,11 +266,12 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             String ipAddress = ipaddr1.getText().toString() + "." + ipaddr2.getText().toString()
                     + "." + ipaddr3.getText().toString() + "." + ipaddr4.getText().toString();
 
-            try {
-                new LongRunningTask().execute(ipAddress);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
+                try {
+                    new LongRunningTask().execute(ipAddress);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
         });
 
     }
