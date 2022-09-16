@@ -60,18 +60,6 @@
                             android:layout_height="match_parent"
                             android:text="@string/empty"/>
 
-                        <RadioButton
-                            android:id="@+id/radio_2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/empty"/>
-
-                        <RadioButton
-                            android:id="@+id/radio_3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/empty"/>
-
 
                     </RadioGroup>
 

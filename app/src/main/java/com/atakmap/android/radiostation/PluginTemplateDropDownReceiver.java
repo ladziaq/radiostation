@@ -66,7 +66,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private final Button modifyAddrButton;
     private final RadioButton radio_custom_val;
     private final RadioGroup radioGroup;
-    private final RadioButton radio0,radio1,radio2,radio3;
+    private final RadioButton radio0,radio1;
     private final EditText ipaddr1;
     private final EditText ipaddr2;
     private final EditText ipaddr3;
@@ -137,8 +137,6 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
         radio0 = myFragmentView.findViewById(R.id.radio_0);
         radio1 = myFragmentView.findViewById(R.id.radio_1);
-        radio2 = myFragmentView.findViewById(R.id.radio_2);
-        radio3 = myFragmentView.findViewById(R.id.radio_3);
         radio_custom_val = myFragmentView.findViewById(R.id.radio_custom_val);
 
 
@@ -281,14 +279,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             radio_custom_val.setChecked(false);
             isChecked = false;
         });
-        radio2.setOnClickListener(v -> {
-            radio_custom_val.setChecked(false);
-            isChecked = false;
-        });
-        radio3.setOnClickListener(v -> {
-            radio_custom_val.setChecked(false);
-            isChecked = false;
-        });
+
 
         radio_custom_val.setOnClickListener(v -> {
            if(isChecked) {
@@ -324,21 +315,13 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                         if (radio1.getText().toString().equals("EMPTY IP ADDRESS")) {
                             radio1.setText(ipAddress);
                         } else {
-                            if (radio2.getText().toString().equals("EMPTY IP ADDRESS")) {
-                                radio2.setText(ipAddress);
-                            } else {
-                                if (radio3.getText().toString().equals("EMPTY IP ADDRESS")) {
-                                    radio3.setText(ipAddress);
-                                } else {
-                                    Toast toast = Toast.makeText(context, "YOU CAN'T ADD MORE RADIOSTATIONS", Toast.LENGTH_SHORT);
-                                    toast.show();
-                                }
-
+                            Toast toast = Toast.makeText(context, "YOU CAN'T ADD MORE RADIOSTATIONS", Toast.LENGTH_SHORT);
+                            toast.show();
                             }
                         }
                     }
                 }
-            }
+
         });
 
         modifyAddrButton.setOnClickListener(view -> {
@@ -353,7 +336,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                 toast.show();
             }else {
 
-                    if (radio0.isChecked() || radio1.isChecked() || radio2.isChecked() || radio3.isChecked()) {
+                    if (radio0.isChecked() || radio1.isChecked()) {
                         int selectedId = radioGroup.getCheckedRadioButtonId();
 
                         if (selectedId == radio0.getId()) {
@@ -362,12 +345,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                         if (selectedId == radio1.getId()) {
                             radio1.setText(oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4);
                         }
-                        if (selectedId == radio2.getId()) {
-                            radio2.setText(oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4);
-                        }
-                        if (selectedId == radio3.getId()) {
-                            radio3.setText(oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4);
-                        }
+
 
                     } else {
                         Toast toast = Toast.makeText(context, "CHOOSE ADDRESS TO MODIFY", Toast.LENGTH_SHORT);
@@ -387,7 +365,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
             oktet4 =  ipaddr4.getText().toString();
             String ipAddress = "";
 
-            if(radio_custom_val.isChecked() || radio0.isChecked() || radio1.isChecked() ||radio2.isChecked() ||radio3.isChecked() ){
+            if(radio_custom_val.isChecked() || radio0.isChecked() || radio1.isChecked() ){
                 if (!radio_custom_val.isChecked()) {
 
                     int selectedId = radioGroup.getCheckedRadioButtonId();
@@ -398,12 +376,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                     if (selectedId == radio1.getId()) {
                         ipAddress = radio1.getText().toString();
                     }
-                    if (selectedId == radio2.getId()) {
-                        ipAddress = radio2.getText().toString();
-                    }
-                    if (selectedId == radio3.getId()) {
-                        ipAddress = radio3.getText().toString();
-                    }
+
                     if(ipAddress.equals("EMPTY IP ADDRESS")){
                         Toast toast = Toast.makeText(context, "EMPTY ADDRESS", Toast.LENGTH_SHORT);
                         toast.show();

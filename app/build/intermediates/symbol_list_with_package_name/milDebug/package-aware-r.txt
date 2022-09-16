@@ -41,8 +41,6 @@ id newMarkButton
 id radioStationButton
 id radio_0
 id radio_1
-id radio_2
-id radio_3
 id radio_custom_val
 id radio_group
 layout main_layout
