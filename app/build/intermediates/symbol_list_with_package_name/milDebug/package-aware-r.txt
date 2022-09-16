@@ -53,6 +53,7 @@ string add_radiostation
 string app_desc
 string app_name
 string choose
+string empty
 string get_coordinates_button_text
 string hello_blank_fragment
 string insert_ip_addr

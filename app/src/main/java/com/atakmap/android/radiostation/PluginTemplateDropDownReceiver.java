@@ -273,11 +273,30 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
         });
 
+        radio0.setOnClickListener(v -> {
+            radio_custom_val.setChecked(false);
+            isChecked = false;
+        });
+        radio1.setOnClickListener(v -> {
+            radio_custom_val.setChecked(false);
+            isChecked = false;
+        });
+        radio2.setOnClickListener(v -> {
+            radio_custom_val.setChecked(false);
+            isChecked = false;
+        });
+        radio3.setOnClickListener(v -> {
+            radio_custom_val.setChecked(false);
+            isChecked = false;
+        });
+
         radio_custom_val.setOnClickListener(v -> {
            if(isChecked) {
                radio_custom_val.setChecked(false);
+               radioGroup.clearCheck();
                isChecked = false;
            }else {
+               radioGroup.clearCheck();
                isChecked = true;
            }
         });
@@ -299,16 +318,16 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
                     String ipAddress = oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4;
 
-                    if (radio0.getText().toString().equals("")) {
+                    if (radio0.getText().toString().equals("EMPTY IP ADDRESS")) {
                         radio0.setText(ipAddress);
                     } else {
-                        if (radio1.getText().toString().equals("")) {
+                        if (radio1.getText().toString().equals("EMPTY IP ADDRESS")) {
                             radio1.setText(ipAddress);
                         } else {
-                            if (radio2.getText().toString().equals("")) {
+                            if (radio2.getText().toString().equals("EMPTY IP ADDRESS")) {
                                 radio2.setText(ipAddress);
                             } else {
-                                if (radio3.getText().toString().equals("")) {
+                                if (radio3.getText().toString().equals("EMPTY IP ADDRESS")) {
                                     radio3.setText(ipAddress);
                                 } else {
                                     Toast toast = Toast.makeText(context, "YOU CAN'T ADD MORE RADIOSTATIONS", Toast.LENGTH_SHORT);
@@ -333,10 +352,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                 Toast toast = Toast.makeText(context, "INSERT IP ADDRESS", Toast.LENGTH_SHORT);
                 toast.show();
             }else {
-                if(radio_custom_val.isChecked()){
-                    Toast toast = Toast.makeText(context, "UNCHECK INPUT ADDRESS", Toast.LENGTH_SHORT);
-                    toast.show();
-                }else {
+
                     if (radio0.isChecked() || radio1.isChecked() || radio2.isChecked() || radio3.isChecked()) {
                         int selectedId = radioGroup.getCheckedRadioButtonId();
 
@@ -358,7 +374,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                         toast.show();
 
                     }
-                }
+
             }
         });
 
@@ -388,25 +404,25 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                     if (selectedId == radio3.getId()) {
                         ipAddress = radio3.getText().toString();
                     }
-                    if(ipAddress.equals("")){
+                    if(ipAddress.equals("EMPTY IP ADDRESS")){
                         Toast toast = Toast.makeText(context, "EMPTY ADDRESS", Toast.LENGTH_SHORT);
                         toast.show();
                     }
 
                 } else {
                     if(oktet1.equals("")||oktet2.equals("")||oktet3.equals("")||oktet4.equals("")) {
-                        Toast toast = Toast.makeText(context, "INSERT IP ADDRESS", Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(context, "EMPTY ADDRESS", Toast.LENGTH_SHORT);
                         toast.show();
                     }else {
                         ipAddress = oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4;
-                        Toast toast = Toast.makeText(context, "CONNECTING WITH: " + ipAddress, Toast.LENGTH_SHORT);
-                        toast.show();
                     }
                 }
-                if(ipAddress.equals("")){
+                if(ipAddress.equals("EMPTY IP ADDRESS") || ipAddress.equals("")){
                     Toast toast = Toast.makeText(context, "EMPTY ADDRESS", Toast.LENGTH_SHORT);
                     toast.show();
                 }else {
+                    Toast toast = Toast.makeText(context, "CONNECTING WITH: " + ipAddress, Toast.LENGTH_SHORT);
+                    toast.show();
                     try {
                         new LongRunningTask().execute(ipAddress);
                     } catch (Exception e) {
@@ -415,6 +431,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
                 }
 
             }else {
+
                 Toast toast = Toast.makeText(context, "CHOOSE OR INSERT IP ADDRESS", Toast.LENGTH_SHORT);
                 toast.show();
             }

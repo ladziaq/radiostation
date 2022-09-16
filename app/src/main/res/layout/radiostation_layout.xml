@@ -32,15 +32,16 @@
                 android:text="@string/insert_ip_addr"
                 android:textSize="14sp" />
             <FrameLayout
-                android:layout_width="220dp"
-                android:layout_height="50dp"
+                android:layout_width="240dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="110dp"
                 android:orientation="vertical">
 
                 <ScrollView
-                    android:layout_width="220dp"
-                    android:layout_height="50dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadeScrollbars="false">
 
                     <RadioGroup
                         android:id="@+id/radio_group"
@@ -50,22 +51,26 @@
 
                         <RadioButton android:id="@+id/radio_0"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:text="@string/empty"/>
 
                         <RadioButton
                             android:id="@+id/radio_1"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="match_parent"
+                            android:text="@string/empty"/>
 
                         <RadioButton
                             android:id="@+id/radio_2"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:text="@string/empty"/>
 
                         <RadioButton
                             android:id="@+id/radio_3"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="match_parent"
+                            android:text="@string/empty"/>
 
 
                     </RadioGroup>
@@ -88,14 +93,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="170dp" />
+                android:layout_marginTop="180dp" />
 
             <EditText
                 android:id="@+id/ipAddr1"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="170dp"
                 android:inputType="number"
                 android:maxLength="3" />
 
@@ -104,7 +109,7 @@
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="95dp"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="170dp"
                 android:inputType="number"
                 android:maxLength="3" />
 
@@ -113,7 +118,7 @@
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="150dp"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="170dp"
                 android:inputType="number"
                 android:maxLength="3" />
 
@@ -122,7 +127,7 @@
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="205dp"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="170dp"
                 android:inputType="number"
                 android:maxLength="3" />
 
