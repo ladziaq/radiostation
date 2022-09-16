@@ -23,35 +23,78 @@
                 android:textColor="#F40A0A"
                 android:textSize="24sp" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="120dp" />
 
             <TextView
                 android:layout_width="220dp"
-                android:layout_height="31dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="80dp"
                 android:text="@string/insert_ip_addr"
                 android:textSize="14sp" />
+            <FrameLayout
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="110dp"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="220dp"
+                    android:layout_height="50dp">
+
+                    <RadioGroup
+                        android:id="@+id/radio_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioButton android:id="@+id/radio_0"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <RadioButton
+                            android:id="@+id/radio_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                        <RadioButton
+                            android:id="@+id/radio_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <RadioButton
+                            android:id="@+id/radio_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+
+                    </RadioGroup>
+
+                </ScrollView>
+
+            </FrameLayout>
+
 
             <TextView
                 android:layout_width="133dp"
                 android:layout_height="33dp"
-                android:layout_marginStart="260dp"
+                android:layout_marginStart="290dp"
                 android:layout_marginTop="80dp"
                 android:text="@string/insert_point"
                 android:textSize="14sp" />
 
+            <RadioButton
+                android:id="@+id/radio_custom_val"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="170dp" />
 
             <EditText
                 android:id="@+id/ipAddr1"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="40dp"
                 android:layout_marginTop="160dp"
                 android:inputType="number"
                 android:maxLength="3" />
@@ -60,7 +103,7 @@
                 android:id="@+id/ipAddr2"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="65dp"
+                android:layout_marginStart="95dp"
                 android:layout_marginTop="160dp"
                 android:inputType="number"
                 android:maxLength="3" />
@@ -69,7 +112,7 @@
                 android:id="@+id/ipAddr3"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="120dp"
+                android:layout_marginStart="150dp"
                 android:layout_marginTop="160dp"
                 android:inputType="number"
                 android:maxLength="3" />
@@ -78,7 +121,7 @@
                 android:id="@+id/ipAddr4"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="175dp"
+                android:layout_marginStart="205dp"
                 android:layout_marginTop="160dp"
                 android:inputType="number"
                 android:maxLength="3" />
@@ -86,7 +129,7 @@
             <TextView
                 android:layout_width="70dp"
                 android:layout_height="33dp"
-                android:layout_marginStart="260dp"
+                android:layout_marginStart="290dp"
                 android:layout_marginTop="120dp"
                 android:text="@string/lat"
                 android:textSize="14sp" />
@@ -94,7 +137,7 @@
             <TextView
                 android:layout_width="70dp"
                 android:layout_height="33dp"
-                android:layout_marginStart="340dp"
+                android:layout_marginStart="370dp"
                 android:layout_marginTop="120dp"
                 android:text="@string/lon"
                 android:textSize="14sp" />
@@ -103,7 +146,7 @@
                 android:id="@+id/latitude_editText"
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="260dp"
+                android:layout_marginStart="290dp"
                 android:layout_marginTop="160dp"
                 android:inputType="numberDecimal|numberSigned"
                 android:text="@string/_0" />
@@ -112,7 +155,7 @@
                 android:id="@+id/longitude_editText"
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="340dp"
+                android:layout_marginStart="370dp"
                 android:layout_marginTop="160dp"
                 android:inputType="numberDecimal|numberSigned"
                 android:text="@string/_0" />
@@ -138,7 +181,7 @@
                 style="@style/darkButton"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="260dp"
+                android:layout_marginStart="290dp"
                 android:layout_marginTop="200dp"
                 android:padding="6dp"
                 android:text="@string/mark_button_text" />
@@ -177,7 +220,7 @@
                 style="@style/darkButton"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="260dp"
+                android:layout_marginStart="290dp"
                 android:layout_marginTop="250dp"
                 android:padding="6dp"
                 android:text="@string/new_mark_button_text" />
@@ -192,11 +235,21 @@
                 android:padding="6dp"
                 android:text="@string/add_radiostation" />
 
+            <Button
+                android:id="@+id/modifyAddrButton"
+                style="@style/darkButton"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="370dp"
+                android:padding="6dp"
+                android:text="@string/modify_ip" />
+
             <View
                 android:id="@+id/divider"
                 android:layout_width="wrap_content"
                 android:layout_height="243dp"
-                android:layout_marginStart="240dp"
+                android:layout_marginStart="270dp"
                 android:layout_marginTop="90dp"
                 android:background="?android:attr/listDivider" />
 

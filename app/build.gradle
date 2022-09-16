@@ -209,6 +209,7 @@ packagingOptions {
 
     defaultConfig {
         minSdkVersion 21
+        applicationId "com.atakmap.android.radiostation"
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86"
         }

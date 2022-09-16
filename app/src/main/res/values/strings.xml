@@ -23,4 +23,7 @@
     <string name="ip_addr">IP address</string>
     <string name="insert_ip_addr">SELECT OR INSERT IP ADDRESS</string>
     <string name="add_radiostation">Add radiostation</string>
+    <string name="choose">choose</string>
+    <string name="radio_ip">0.0.0.0</string>
+    <string name="modify_ip">Modify address</string>
 </resources>

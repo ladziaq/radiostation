@@ -12,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,13 +62,28 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     private final EditText longitudeEditText;
     private final Button markButton;
     private final Button newMarkButton;
+    private final Button addRadiostationButton;
+    private final Button modifyAddrButton;
+    private final RadioButton radio_custom_val;
+    private final RadioGroup radioGroup;
+    private final RadioButton radio0,radio1,radio2,radio3;
     private final EditText ipaddr1;
     private final EditText ipaddr2;
     private final EditText ipaddr3;
     private final EditText ipaddr4;
     private static int markerCounter = 0;
     private  String uid;
-    String[] adreses = { "127.0.0.1"};
+    String oktet1;
+    String oktet2;
+    String oktet3;
+    String oktet4;
+    private static boolean  isChecked = false;
+    private static boolean  isCheckedRadio0 = false;
+    private static boolean  isCheckedRadio1 = false;
+    private static boolean  isCheckedRadio2 = false;
+    private static boolean  isCheckedRadio3 = false;
+
+    String[] adreses = {"198.168.102.1" ,"127.0.0.1"};
 
 
 
@@ -96,6 +113,7 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     }
 
 
+
     @SuppressLint("SetTextI18n")
     public PluginTemplateDropDownReceiver(final MapView mapView,
                                           final Context context) {
@@ -113,29 +131,24 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
         longitudeEditText = myFragmentView.findViewById(R.id.longitude_editText);
         markButton = myFragmentView.findViewById(R.id.markButton);
         newMarkButton = myFragmentView.findViewById(R.id.newMarkButton);
+        addRadiostationButton = myFragmentView.findViewById(R.id.addRadiostationButton);
+        modifyAddrButton = myFragmentView.findViewById(R.id.modifyAddrButton);
+        radioGroup = myFragmentView.findViewById(R.id.radio_group);
+
+        radio0 = myFragmentView.findViewById(R.id.radio_0);
+        radio1 = myFragmentView.findViewById(R.id.radio_1);
+        radio2 = myFragmentView.findViewById(R.id.radio_2);
+        radio3 = myFragmentView.findViewById(R.id.radio_3);
+        radio_custom_val = myFragmentView.findViewById(R.id.radio_custom_val);
+
+
         radioLattextView = myFragmentView.findViewById(R.id.lat_textView);
         radioLontextView = myFragmentView.findViewById(R.id.lon_textView);
         ipaddr1 = myFragmentView.findViewById(R.id.ipAddr1);
         ipaddr2 = myFragmentView.findViewById(R.id.ipAddr2);
         ipaddr3 = myFragmentView.findViewById(R.id.ipAddr3);
         ipaddr4 = myFragmentView.findViewById(R.id.ipAddr4);
-        Spinner spinner = myFragmentView.findViewById(R.id.spinner);
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this.pluginContext, android.R.layout.simple_spinner_item, adreses);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(dataAdapter);
-
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         ipaddr1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -260,19 +273,153 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
 
         });
 
+        radio_custom_val.setOnClickListener(v -> {
+           if(isChecked) {
+               radio_custom_val.setChecked(false);
+               isChecked = false;
+           }else {
+               isChecked = true;
+           }
+        });
+
+        addRadiostationButton.setOnClickListener(view -> {
+            oktet1 =  ipaddr1.getText().toString();
+            oktet2 =  ipaddr2.getText().toString();
+            oktet3 =  ipaddr3.getText().toString();
+            oktet4 =  ipaddr4.getText().toString();
+
+            if(oktet1.equals("")||oktet2.equals("")||oktet3.equals("")||oktet4.equals("")) {
+                Toast toast = Toast.makeText(context, "INSERT IP ADDRESS", Toast.LENGTH_SHORT);
+                toast.show();
+            }else{
+                if(!radio_custom_val.isChecked()){
+                    Toast toast1 = Toast.makeText(context, "CLICK INPUT CHECKBOX", Toast.LENGTH_SHORT);
+                    toast1.show();
+                }else {
+
+                    String ipAddress = oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4;
+
+                    if (radio0.getText().toString().equals("")) {
+                        radio0.setText(ipAddress);
+                    } else {
+                        if (radio1.getText().toString().equals("")) {
+                            radio1.setText(ipAddress);
+                        } else {
+                            if (radio2.getText().toString().equals("")) {
+                                radio2.setText(ipAddress);
+                            } else {
+                                if (radio3.getText().toString().equals("")) {
+                                    radio3.setText(ipAddress);
+                                } else {
+                                    Toast toast = Toast.makeText(context, "YOU CAN'T ADD MORE RADIOSTATIONS", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        modifyAddrButton.setOnClickListener(view -> {
+            oktet1 =  ipaddr1.getText().toString();
+            oktet2 =  ipaddr2.getText().toString();
+            oktet3 =  ipaddr3.getText().toString();
+            oktet4 =  ipaddr4.getText().toString();
+
+
+            if(oktet1.equals("")||oktet2.equals("")||oktet3.equals("")||oktet4.equals("")) {
+                Toast toast = Toast.makeText(context, "INSERT IP ADDRESS", Toast.LENGTH_SHORT);
+                toast.show();
+            }else {
+                if(radio_custom_val.isChecked()){
+                    Toast toast = Toast.makeText(context, "UNCHECK INPUT ADDRESS", Toast.LENGTH_SHORT);
+                    toast.show();
+                }else {
+                    if (radio0.isChecked() || radio1.isChecked() || radio2.isChecked() || radio3.isChecked()) {
+                        int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                        if (selectedId == radio0.getId()) {
+                            radio0.setText(oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4);
+                        }
+                        if (selectedId == radio1.getId()) {
+                            radio1.setText(oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4);
+                        }
+                        if (selectedId == radio2.getId()) {
+                            radio2.setText(oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4);
+                        }
+                        if (selectedId == radio3.getId()) {
+                            radio3.setText(oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4);
+                        }
+
+                    } else {
+                        Toast toast = Toast.makeText(context, "CHOOSE ADDRESS TO MODIFY", Toast.LENGTH_SHORT);
+                        toast.show();
+
+                    }
+                }
+            }
+        });
+
+
 
         radioLocationButton.setOnClickListener(v -> {
+            oktet1 =  ipaddr1.getText().toString();
+            oktet2 =  ipaddr2.getText().toString();
+            oktet3 =  ipaddr3.getText().toString();
+            oktet4 =  ipaddr4.getText().toString();
+            String ipAddress = "";
 
-            String ipAddress = ipaddr1.getText().toString() + "." + ipaddr2.getText().toString()
-                    + "." + ipaddr3.getText().toString() + "." + ipaddr4.getText().toString();
+            if(radio_custom_val.isChecked() || radio0.isChecked() || radio1.isChecked() ||radio2.isChecked() ||radio3.isChecked() ){
+                if (!radio_custom_val.isChecked()) {
 
-                try {
-                    new LongRunningTask().execute(ipAddress);
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                    if (selectedId == radio0.getId()) {
+                        ipAddress = radio0.getText().toString();
+                    }
+                    if (selectedId == radio1.getId()) {
+                        ipAddress = radio1.getText().toString();
+                    }
+                    if (selectedId == radio2.getId()) {
+                        ipAddress = radio2.getText().toString();
+                    }
+                    if (selectedId == radio3.getId()) {
+                        ipAddress = radio3.getText().toString();
+                    }
+                    if(ipAddress.equals("")){
+                        Toast toast = Toast.makeText(context, "EMPTY ADDRESS", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+
+                } else {
+                    if(oktet1.equals("")||oktet2.equals("")||oktet3.equals("")||oktet4.equals("")) {
+                        Toast toast = Toast.makeText(context, "INSERT IP ADDRESS", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }else {
+                        ipAddress = oktet1 + "." + oktet2 + "." + oktet3 + "." + oktet4;
+                        Toast toast = Toast.makeText(context, "CONNECTING WITH: " + ipAddress, Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                }
+                if(ipAddress.equals("")){
+                    Toast toast = Toast.makeText(context, "EMPTY ADDRESS", Toast.LENGTH_SHORT);
+                    toast.show();
+                }else {
+                    try {
+                        new LongRunningTask().execute(ipAddress);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
 
+            }else {
+                Toast toast = Toast.makeText(context, "CHOOSE OR INSERT IP ADDRESS", Toast.LENGTH_SHORT);
+                toast.show();
+            }
         });
+
 
     }
 

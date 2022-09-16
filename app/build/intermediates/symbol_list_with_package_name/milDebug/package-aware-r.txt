@@ -36,9 +36,15 @@ id latitude_editText
 id lon_textView
 id longitude_editText
 id markButton
+id modifyAddrButton
 id newMarkButton
 id radioStationButton
-id spinner
+id radio_0
+id radio_1
+id radio_2
+id radio_3
+id radio_custom_val
+id radio_group
 layout main_layout
 layout radiostation_layout
 string _0
@@ -46,6 +52,7 @@ string actual_location
 string add_radiostation
 string app_desc
 string app_name
+string choose
 string get_coordinates_button_text
 string hello_blank_fragment
 string insert_ip_addr
@@ -55,8 +62,10 @@ string lat
 string lon
 string long_lat
 string mark_button_text
+string modify_ip
 string new_mark_button_text
 string no_connection
+string radio_ip
 string radio_location
 string radiostation
 string send_location
