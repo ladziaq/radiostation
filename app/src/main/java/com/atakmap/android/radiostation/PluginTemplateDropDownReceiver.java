@@ -78,10 +78,6 @@ public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
     String oktet3;
     String oktet4;
     private static boolean  isChecked = false;
-    private static boolean  isCheckedRadio0 = false;
-    private static boolean  isCheckedRadio1 = false;
-    private static boolean  isCheckedRadio2 = false;
-    private static boolean  isCheckedRadio3 = false;
 
     String[] adreses = {"198.168.102.1" ,"127.0.0.1"};
 
