@@ -40,8 +40,8 @@ int id newMarkButton 0x7f06000d
 int id radioStationButton 0x7f06000e
 int id radio_0 0x7f06000f
 int id radio_1 0x7f060010
-int id radio_custom_val 0x7f060013
-int id radio_group 0x7f060014
+int id radio_custom_val 0x7f060011
+int id radio_group 0x7f060012
 int layout main_layout 0x7f070000
 int layout radiostation_layout 0x7f070001
 int string _0 0x7f080000
