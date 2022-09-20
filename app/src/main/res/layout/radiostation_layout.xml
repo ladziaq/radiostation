@@ -25,12 +25,12 @@
 
 
             <TextView
-                android:layout_width="220dp"
+                android:layout_width="240dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="80dp"
                 android:text="@string/insert_ip_addr"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
             <FrameLayout
                 android:layout_width="240dp"
                 android:layout_height="65dp"
@@ -49,16 +49,19 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RadioButton android:id="@+id/radio_0"
+                        <RadioButton
+                            android:id="@+id/radio_0"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/empty"/>
+                            android:text="@string/empty"
+                            android:textSize="14sp" />
 
                         <RadioButton
                             android:id="@+id/radio_1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/empty"/>
+                            android:text="@string/empty"
+                            android:textSize="14sp" />
 
 
                     </RadioGroup>
@@ -69,12 +72,12 @@
 
 
             <TextView
-                android:layout_width="133dp"
-                android:layout_height="33dp"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="290dp"
                 android:layout_marginTop="80dp"
                 android:text="@string/insert_point"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/radio_custom_val"
@@ -90,7 +93,8 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="170dp"
                 android:inputType="number"
-                android:maxLength="3" />
+                android:maxLength="3"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/ipAddr2"
@@ -99,7 +103,8 @@
                 android:layout_marginStart="95dp"
                 android:layout_marginTop="170dp"
                 android:inputType="number"
-                android:maxLength="3" />
+                android:maxLength="3"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/ipAddr3"
@@ -108,7 +113,8 @@
                 android:layout_marginStart="150dp"
                 android:layout_marginTop="170dp"
                 android:inputType="number"
-                android:maxLength="3" />
+                android:maxLength="3"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/ipAddr4"
@@ -117,13 +123,14 @@
                 android:layout_marginStart="205dp"
                 android:layout_marginTop="170dp"
                 android:inputType="number"
-                android:maxLength="3" />
+                android:maxLength="3"
+                android:textSize="16sp" />
 
             <TextView
                 android:layout_width="70dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="290dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="130dp"
                 android:text="@string/lat"
                 android:textSize="14sp" />
 
@@ -131,7 +138,7 @@
                 android:layout_width="70dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="370dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="130dp"
                 android:text="@string/lon"
                 android:textSize="14sp" />
 
@@ -142,7 +149,8 @@
                 android:layout_marginStart="290dp"
                 android:layout_marginTop="160dp"
                 android:inputType="numberDecimal|numberSigned"
-                android:text="@string/_0" />
+                android:text="@string/_0"
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/longitude_editText"
@@ -151,13 +159,14 @@
                 android:layout_marginStart="370dp"
                 android:layout_marginTop="160dp"
                 android:inputType="numberDecimal|numberSigned"
-                android:text="@string/_0" />
+                android:text="@string/_0"
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="70dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="210dp"
+                android:layout_marginTop="230dp"
                 android:text="@string/lat"
                 android:textSize="14sp" />
 
@@ -165,7 +174,7 @@
                 android:layout_width="70dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="120dp"
-                android:layout_marginTop="210dp"
+                android:layout_marginTop="230dp"
                 android:text="@string/lon"
                 android:textSize="14sp" />
 
@@ -186,7 +195,7 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="250dp"
-                android:text="@string/no_connection"
+                android:text="@string/zero"
                 android:textSize="14sp" />
 
             <TextView
@@ -195,7 +204,7 @@
                 android:layout_height="33dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="250dp"
-                android:text="@string/no_connection"
+                android:text="@string/zero"
                 android:textSize="14sp" />
 
             <Button

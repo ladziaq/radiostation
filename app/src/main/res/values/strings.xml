@@ -27,4 +27,6 @@
     <string name="radio_ip">0.0.0.0</string>
     <string name="modify_ip">Modify address</string>
     <string name="empty">EMPTY IP ADDRESS</string>
+    <string name="zero">0.00</string>
+
 </resources>

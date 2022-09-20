@@ -69,6 +69,7 @@ int string radiostation 0x7f080015
 int string send_location 0x7f080016
 int string versionName 0x7f080017
 int string wait 0x7f080018
+int string zero 0x7f080019
 int style ATAKEditText 0x7f090000
 int style ATAKPluginTheme 0x7f090001
 int style ATAKSpinner 0x7f090002
