@@ -1,3 +1,17 @@
-Wtyczka do aplikacji ATAK. </br>
-Umożliwia pobieranie współórzędnych z radiostacji RRC9210 przy pomocy protokołu SNMP.</br>
-Twórca Marcin ŁADZIAK.
+
+# Project Title
+
+A plug for the ATAK application.
+the main task of the application is to download RRC 9210 radio coordinates.
+## Authors
+
+- [@octokatherine](https://www.github.com/ladziaq)
+
+
+## Features
+
+- Downloading coordinates
+- Managing ip addreses
+- Adding markes on map
+
+
