@@ -1,8 +1,8 @@
 
 # Project Title
 
-A plug for the ATAK application.
-the main task of the application is to download RRC 9210 radio coordinates.
+A plug for the ATAK application.</br>
+The main task of the application is to download RRC 9210 radio coordinates.
 ## Authors
 
 - [@ladziaq](https://www.github.com/ladziaq)
